@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分类</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+    maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="../font_zu53ku7ttb4vx6r/demo.css">
+    <link rel="stylesheet" href="../font_zu53ku7ttb4vx6r/iconfont.css">
+    <link rel="stylesheet" href="../css/fenlei.css">
+
+</head>
+<body>
+<div id="#div">
+    <ul id="ulgoods">
+        <li>
+            <a href="#"></a>
+        </li>
+    </ul>
+</div>
+<div class="footer">
+    <a href="../html/index.html" style=" color: #ff3465;float: left">
+        <i class="icon iconfont icon-shouye"></i>
+        <span >首页</span>
+    </a>
+    <a href="../html/feilei.html">
+        <i class="icon iconfont icon-gouwu"></i>
+        <span>购物</span>
+    </a>
+    <a href="#">
+        <i class="icon iconfont icon-zhaoxiangji"></i>
+    </a>
+    <a href="#">
+        <i class="icon iconfont icon-xiaoxi"></i>
+        <span>消息</span>
+    </a>
+    <a href="../html/myInformation.html" style="margin-right: 0"><img src="../images/13_03.gif" alt=""><p>我</p></a>
+</div>
+</div>
+<script src="../font_zu53ku7ttb4vx6r/iconfont.js" ></script>
+<script src="../js/jquery.min.js"></script>
+<script type="text/javascript">
+    var px=document.documentElement.clientWidth;
+    //        console.log(px)
+    document.getElementsByTagName("html")[0].style.fontSize=px/2+"px";
+    $(document).ready(function() {
+
+        $.ajax({
+            type: "get",
+            async: false,
+            url: "http://datainfo.duapp.com/shopdata/getGoods.php",
+            dataType: "jsonp",
+            jsonp: "callback",
+            jsonpCallback: "callback",
+            success: function(json){
+                var html = '';
+                for (var i in json) {
+                    var g = json[i];
+                    var name = g['goodsName'];
+                    html += '<li><a data-goodsid="' + g['goodsID'] + '" data-goodsimg="' + g['goodsListImg'] + '">' + name + '</a></li>';
+                }
+
+                $('#ulgoods').html(html);
+//                当点击a的时候，调到details的页面，显示对应的id和图片
+
+                $('#ulgoods li a').click(function() {
+                    var goodsid = $(this).data('goodsid');
+                    var goodsimg = $(this).data('goodsimg');
+                    window.location.href = "../html/details.html?id=" + goodsid + '&img=' + goodsimg;
+                })
+
+            },
+            error: function(){
+                alert('fail');
+            }
+        });
+
+
+    })
+</script>
+</body>
+</html>

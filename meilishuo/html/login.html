@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+    maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+<div class="login-head">
+    <a href="../html/index.html" class="fanhui"><</a>
+    <h2>登录</h2>
+    <a href="../html/registered.html" class="registered">注册</a>
+</div>
+<div class="conter">
+    <div class="username">
+        <input type="text" placeholder="昵称/邮箱/手机">
+    </div>
+    <div class="username" style="margin-top: 0.5rem">
+        <input type="password" placeholder="密码">
+    </div>
+
+    <!--会自动提交这两个-->
+    <!--<input type="submit">-->
+    <button id="login">登录</button>
+
+    <ul>
+        <li>全球手机登录</li>
+        <li>忘记密码</li>
+        <li style="border: 0">设置与帮助</li>
+    </ul>
+    <!--快速登录-->
+    <div class="fastlogin">
+        <div class="left"></div>
+        <p>第三方账号快速登录</p>
+        <div class="left"></div>
+    </div>
+    <div class="fastlogin-conter">
+        <a href="#">
+            <img src="../images/14_03.gif" alt="">
+            <p>QQ登录</p>
+        </a>
+        <a href="#">
+            <img src="../images/15_03.gif" alt="">
+            <p>微信登录</p>
+        </a>
+        <a href="#" style="margin-right: 0">
+            <img src="../images/17_03.gif" alt="">
+            <p>微博登录</p>
+        </a>
+    </div>
+</div>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/login.js"></script>
+</body>
+</html>

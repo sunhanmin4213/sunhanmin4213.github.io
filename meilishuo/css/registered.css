@@ -1,0 +1,39 @@
+.login-head p{
+    float: right;
+    width: 20%;
+    height: 40%;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 4%;
+}
+
+.china{
+    float: right;
+    color: #999999;
+    margin-top:4%;
+    margin-right: 2%;
+}
+.frontnum{
+    float: left;
+    width: 15%;
+    height: 80%;
+    text-align: center;
+    line-height: 2.5rem;
+    border-right: 1px solid #e5e5e5;
+}
+.yzm{
+    float:right ;
+    border-left: 1px solid #e5e5e5;
+    height: 80%;
+    line-height: 2.5rem;
+    padding: 0 1rem;
+}
+.agreement{
+    width: 90%;
+    margin-top: 3%;
+    margin-left: 5%;
+
+}
+.agreement a{
+    color: #999999;
+}

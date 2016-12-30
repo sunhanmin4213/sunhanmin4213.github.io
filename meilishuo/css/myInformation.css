@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a:hover{
+    text-decoration: none;
+}
+body{
+    font-size: 0.08rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+#zt{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /*overflow: auto;*/
+}
+#head{
+    position: absolute;
+    left:0;
+    top: 0;
+    width: 100%;
+    height: 0.3rem;
+    background-color: #ff3366;
+    /*transition: all 5s;*/
+}
+
+#conter{
+    position: absolute;
+    left:0;
+    top: 0.3rem;
+    bottom: 0.2rem;
+    height: auto;
+    overflow: auto;
+    width: 2rem;
+    background-color: #f2f2f2;
+}
+.conter-message{
+    width: 100%;
+    height: 0.4rem;
+    background: #ff3366;
+}
+.guanzhu{
+    width: 100%;
+    height: 0.25rem;
+    background: #ec2c5a;
+    margin-bottom: 0.055rem;
+}
+.guanzhu a{
+    width: 49.5%;
+    height: 70%;
+    display: block;
+    float: left;
+    /*background: green;*/
+    margin: 1% 0 0 0 ;
+    color: #fff;
+    text-align: center;
+    line-height: 0.2rem;
+}
+.all-order{
+    width: 100%;
+    height: 0.8rem;
+    background: #fff;
+
+}
+.all-order-title{
+    width: 95%;
+    height: 0.22rem;
+    background: #fff;
+    border-bottom: 1px solid #d6d6d6;
+    margin-left: 5%;
+}
+.all-order-conter{
+    width: 100%;
+    height: 70%;
+    /*background: green;*/
+}
+.all-order-conter a{
+    width: 25%;
+    height: 80%;
+    float: left;
+    /*background: red;*/
+    text-align: center;
+    line-height: 0.2rem;
+    margin: 5% 0 0  0;
+    color: #333333;
+}
+.sign{
+    width: 100%;
+    height: 0.67rem;
+    background:#fff;
+    margin-top: 0.055rem;
+    margin-bottom: 0.055rem;
+}
+
+#foot{
+    position: fixed;
+    left:0;
+    bottom: 0;
+    width: 100%;
+    height: 0.3rem;
+    background-color: #fff;
+}
+#foot a{
+    float: left;
+    width: 11%;
+    height: 0.2rem;
+
+    text-align: center;
+    margin: 0 0.05rem 0 0.1rem;
+    color: #999999;
+}
+#foot a img{
+    width: 83%;
+    height: 72%;
+}
+
+/**/
+/*.green_img{width: 100%;height: 10rem;position: relative}*/
+/*.my{position: absolute;z-index: 90;left:45%;top:1rem;color:white;font-weight: 500}*/
+/*.nv_img{position: absolute;border-radius:50%;left:13%;top:4rem;width:19%;height:3.9rem;background: url("image/nv.jpg") no-repeat;}*/
+/*.same{position: absolute;width:18%;height: 2.2em;line-height: 0.2rem;}*/
+/*.register{top:6rem;left:47%}*/
+/*.enroll{top: 6rem;left:70%}*/
+/*.name{position: absolute;width:28%;height: 2.2em;top:5rem;left:47%;display: block}*/
+/*.name_show{position: absolute;width:28%;height: 2.2em;top:5rem;left:47%;display: none}*/
+/*.name_user{position: absolute;width:28%;height: 2.2em;top:5rem;left:60%;}*/

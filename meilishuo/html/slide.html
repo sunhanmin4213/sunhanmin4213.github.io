@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>幻灯片的</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+    maximum-scale=1.0,user-scalable=no">
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+
+    </style>
+</head>
+<body>
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="width: 100%;height: 100%">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+    </ol>
+
+    <!-- 放图片的 -->
+    <div class="carousel-inner" role="listbox">
+
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<script src="../js/jquery.min.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+//       $("button").click(function(){
+//            window.location.href="../html/index.html"
+//        });
+        $.ajax({
+            type: "get",
+            async: false,
+            url: "http://datainfo.duapp.com/shopdata/getBanner.php",
+            dataType: "jsonp",
+            jsonp: "callback",
+            jsonpCallback: "callback",
+            success: function(json){
+                var html = '';
+                for (var i in json) {
+                    var img = json[i]['goodsBenUrl'];
+                    img = $.parseJSON(img);
+                    img = img[0];
+//                    console.log(img);//输出的就是四张照片
+
+                    html += '<div class="item';
+//                    默认显示第一张幻灯片
+
+                    if(i==0){
+                        html+=' active';
+                    }
+                    html += '"><img src="' + img + '" data-holder-rendered="true">';
+                    //最后一张幻灯片添加进入首页按钮
+                    if (i == json.length - 1) {
+                        html += '<center><button class="btn btn-danger" onclick="localStorage.setItem(\'slide\',1); window.location.href=\'first.html\';">进入首页</button></center>';
+                    }
+                    html += '</div>';
+
+                }
+                $('.carousel-inner').html(html);
+
+                $('.carousel').carousel({interval:false});
+
+            },
+            error: function(){
+                alert('fail');
+            }
+
+        });
+    })
+</script>
+</body>
+</html>
